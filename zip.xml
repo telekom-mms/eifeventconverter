@@ -1,0 +1,51 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+	<id>bin</id>
+	<baseDirectory>/</baseDirectory>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>target/libs</directory>
+			<includes>
+				<include>*.jar</include>
+			</includes>
+			<outputDirectory>libs</outputDirectory>
+		</fileSet>
+	</fileSets>
+	<files>
+		<file>
+			<source>target/EIFEventConverter.jar</source>
+			<destName>EIFEventConverter.jar</destName>
+		</file>
+		<file>
+			<source>config/config.properties</source>
+			<destName>config/config.properties</destName>
+		</file>
+		<file>
+			<source>config/log4j2.config</source>
+			<destName>config/log4j2.config</destName>
+		</file>
+		<file>
+			<source>config/keystore.jks</source>
+			<destName>config/keystore.jks</destName>
+		</file>
+		<file>
+			<source>config/EIFEventConverter.sh</source>
+			<destName>EIFEventConverter.sh</destName>
+		</file>
+		<file>
+			<source>README.md</source>
+			<destName>README.md</destName>
+		</file>
+		<file>
+			<source>config/EIFEventConverter.service</source>
+			<destName>config/EIFEventConverter.service</destName>
+		</file>
+	</files>
+
+</assembly>

@@ -1,0 +1,10 @@
+target*
+export*
+certs*
+build*
+libs*
+event.out
+log/*
+*.log
+.settings
+/bin/

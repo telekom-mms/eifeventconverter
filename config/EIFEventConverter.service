@@ -1,0 +1,17 @@
+[Unit]
+  Description=EIFEventConverter
+  After=rc-local.service
+  Requires=NetworkManager.service
+ [Service]
+  User=root
+  Type=simple
+  TimeoutSec=5
+  PIDFile=/opt/EIFEventAdapter/EIFEventConverter.pid
+  Restart=on-failure
+  RestartSec=5s
+  RemainAfterExit=true
+  ExecStart=/opt/EIFEventConverter/EIFEventConverter.sh start
+  ExecStop=/opt/EIFEventConverter/EIFEventConverter.sh stop
+   
+ [Install]
+  WantedBy=multi-user.target
